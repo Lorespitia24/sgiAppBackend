@@ -72,10 +72,10 @@ public class StatisticsDataService implements IStatisticsDataService {
 	}
 
 	public List<StatisticsData> findAll() {
-		 List<StatisticsData> dataList = (List<StatisticsData>) statisticsDataDao.findByQuantityDesc(); // Ajusta este método según tu servicio
+		 List<StatisticsData> dataList = (List<StatisticsData>) statisticsDataDao.findByQuantityDesc(); 
 	        try (FileWriter writer = new FileWriter(PATH_DEF_DATA +"\\consulta.txt")) {
 	            for (StatisticsData dato : dataList) {
-	                writer.write("ID: "+dato.getId()+" Name: "+ dato.getName()+" Quantity: " + dato.getQuantity()+ "\n"); // Ajusta el método toString según tu entidad para escribir los datos
+	                writer.write("ID: "+dato.getId()+" Name: "+ dato.getName()+" Quantity: " + dato.getQuantity()+ "\n"); 
 	            }
 	        } catch (IOException e) {
 				// TODO Auto-generated catch block
