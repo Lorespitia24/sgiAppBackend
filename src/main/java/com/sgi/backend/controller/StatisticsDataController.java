@@ -19,6 +19,7 @@ public class StatisticsDataController {
 	@Autowired
 	private IStatisticsDataService statisticsDataService;
 	
+	@Scheduled(fixedRate = 10000)
 	@GetMapping("/statisticsData")
 	public void getAllStatisticsData() {
 		 statisticsDataService.getFileExcel();

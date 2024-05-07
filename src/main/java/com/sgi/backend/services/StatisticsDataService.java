@@ -99,7 +99,7 @@ public class StatisticsDataService implements IStatisticsDataService {
 		return false;
 	}
 	
-	@Scheduled(fixedRate = 10000)
+
 	public void getFileExcel() {
 
 		
