@@ -3,6 +3,7 @@ package com.sgi.backend.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class StatisticsDataController {
 	@Autowired
 	private IStatisticsDataService statisticsDataService;
 	
-	@GetMapping("/statisticsData")
+	@Scheduled(fixedRate = 60000)
 	public void getAllStatisticsData() {
 		 statisticsDataService.getFileExcel();
 	}
