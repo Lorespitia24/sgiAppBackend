@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sgi.backend.entity.StatisticsData;
 import com.sgi.backend.services.IStatisticsDataService;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
 @RequestMapping("/api")
 public class StatisticsDataController {
@@ -20,7 +19,7 @@ public class StatisticsDataController {
 	@Autowired
 	private IStatisticsDataService statisticsDataService;
 	
-	@Scheduled(fixedRate = 60000)
+	@GetMapping("/statisticsData")
 	public void getAllStatisticsData() {
 		 statisticsDataService.getFileExcel();
 	}
